@@ -9,6 +9,8 @@ import { AddPersonneComponent } from './pages/add-personne/add-personne.componen
 import { AllPersonnesComponent } from './pages/all-personnes/all-personnes.component';
 import { ContactComponent } from './pages/contact/contact.component';
 import { AProposComponent } from './pages/a-propos/a-propos.component';
+import { FormsModule } from '@angular/forms';
+import { DetailsPersonneComponent } from './pages/details-personne/details-personne.component';
 
 @NgModule({
   declarations: [
@@ -18,11 +20,13 @@ import { AProposComponent } from './pages/a-propos/a-propos.component';
     AddPersonneComponent,
     AllPersonnesComponent,
     ContactComponent,
-    AProposComponent
+    AProposComponent,
+    DetailsPersonneComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,1 +1,4 @@
-<p>all-personnes works!</p>
+<div><p>Il y a {{ personnesAAfficher.length }} personnes en base</p></div>
+<div *ngFor="let p of personnesAAfficher">
+    <app-details-personne [pers]="p" (suppressionPersonne)="onSuppressionPersonne()"></app-details-personne>
+</div>

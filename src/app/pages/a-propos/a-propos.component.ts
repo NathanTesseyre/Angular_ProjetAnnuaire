@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AProposComponent implements OnInit {
 
+  dateDuJour : string = new Date().toLocaleDateString();
+
   constructor() { }
 
   ngOnInit(): void {

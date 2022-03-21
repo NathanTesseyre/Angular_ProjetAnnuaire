@@ -1,1 +1,29 @@
-<p>add-personne works!</p>
+<h2>Ajouter une personne</h2>
+<form #f="ngForm" (ngSubmit)="onFormSubmit(f)">
+    <div>
+        <label for="nom">* Nom</label>
+        <input type="text" name="nom" placeholder="Nom obligatoire" ngModel #champNom="ngModel" required minlength="3" maxlength="50" size="20">
+        <div *ngIf="champNom.invalid && champNom.dirty" class="alert">
+            <div *ngIf="champNom.errors?.['required']">Le nom est obligatoire</div>
+            <div *ngIf="champNom.errors?.['maxlength']">Le nom doit comporter au plus 50 caractères</div>
+            <div *ngIf="champNom.errors?.['minlength']">Le nom doit comporter au moins 3 caractères</div>
+        </div>
+
+        <label for="prenom">Prénom</label>
+        <input type="text" name="prenom" id="prenom" ngModel maxlength="50" #champPrenom="ngModel">
+        <div *ngIf="champPrenom.invalid && champPrenom.dirty" class="alert">
+            <div *ngIf="champPrenom.errors?.['maxlength']">Le nom doit comporter au plus 50 caractères</div>
+        </div>
+
+        <label for="tel">Téléphone</label>
+        <input type="text" name="tel" id="tel" ngModel pattern="(?:(?:\+|00)33|0)\s*[1-9](?:[\s.-]*\d{2}){4}" class="tel" #champTel="ngModel">
+        <div *ngIf="champTel.invalid && champTel.dirty" class="alert">
+            Téléphone 0x xx xx xx xx
+        </div>
+    
+    </div>
+    <div id="button">
+        <button type="submit" [style.visibility]="f.valid ? 'visible' : 'hidden'">Ajouter</button>
+    </div>
+</form>
+
