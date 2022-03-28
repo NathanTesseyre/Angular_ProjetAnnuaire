@@ -11,6 +11,7 @@ import { ContactComponent } from './pages/contact/contact.component';
 import { AProposComponent } from './pages/a-propos/a-propos.component';
 import { FormsModule } from '@angular/forms';
 import { DetailsPersonneComponent } from './pages/details-personne/details-personne.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { DetailsPersonneComponent } from './pages/details-personne/details-perso
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

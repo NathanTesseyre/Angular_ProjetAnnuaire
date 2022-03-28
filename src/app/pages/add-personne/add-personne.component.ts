@@ -26,7 +26,7 @@ export class AddPersonneComponent implements OnInit {
    */
   onFormSubmit(form: NgForm){
     //Ajouter la personne via personneService
-    this.personneService.addPersonne(this.formValueToPersonne(form.value));
+    this.personneService.addPersonne(this.formValueToPersonne(form.value)).subscribe( (p: Personne) => {});
   }
 
   formValueToPersonne(v: any) : Personne{

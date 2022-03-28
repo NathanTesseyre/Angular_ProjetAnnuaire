@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Compteur } from 'src/app/models/Compteur';
 import { Personne } from 'src/app/models/Personne';
 import { PersonnesService } from 'src/app/services/personnes.service';
 
@@ -27,8 +28,9 @@ export class DetailsPersonneComponent implements OnInit {
  * Supprimer la personne
  */
   onClickButtonSuppr(){
-    this.ps.deletePersonne(this.pers);
-    this.suppressionPersonne.emit(this.pers);
+    this.ps.deletePersonne(this.pers).subscribe( (o: Compteur) => {
+      this.suppressionPersonne.emit(this.pers);
+    });
   }
 
 }

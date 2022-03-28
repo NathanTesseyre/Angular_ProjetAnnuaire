@@ -31,7 +31,12 @@ export class AllPersonnesComponent implements OnInit {
   }
 
   majPersonnesAAfficher(){
-    this.personnesAAfficher = this.personneService.getPersonnes();
+    this.personneService.getPersonnes().subscribe(
+      //Truc à faire quand la liste des personnes sera produite
+      (personnes : Personne[]) => {
+         this.personnesAAfficher = personnes
+      }
+    );
   }
 
 }
